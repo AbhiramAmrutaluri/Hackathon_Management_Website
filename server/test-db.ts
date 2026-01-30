@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
-
-const mongoUri = 'mongodb+srv://myAtlasDBUser:XXXXXXXXXXXX@myatlasclusteredu.bw6sol8.mongodb.net/hackathon?retryWrites=true&w=majority';
+import dotenv from 'dotenv';
+dotenv.config();
+const mongoUri = process.env.MONGODB_URI;
 
 console.log('Starting MongoDB connection test...');
 console.log('URI:', mongoUri.replace(/:[^@]+@/, ':***@'));
